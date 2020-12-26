@@ -1,0 +1,22 @@
+[package]
+authors = ["a"]
+edition = "2018"
+name = "project_s"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# raylib = { git = "https://github.com/deltaphc/raylib-rs", branch = "master" }
+imgui = "0.6.1"
+imgui-opengl-renderer = {version = "0.7.0", path = "./rust-imgui-opengl-renderer"}
+raylib = {version = "3.0.0", path = "./raylib"}
+rustc-hash = "1.1.0"
+[profile.dev]
+opt-level = 1 # some debug optimization
+# overflow-checks = false 
+# rustflags = [ "-Z", "force-overflow-checks=off" ]
+
+# for flamegraph, turn this off when distributing
+[profile.release]
+# debug = true
